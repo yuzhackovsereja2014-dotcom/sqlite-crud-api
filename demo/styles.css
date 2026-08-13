@@ -1,0 +1,69 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #071426;
+  color: #edf6ff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 84% 10%, rgba(20, 169, 255, .22), transparent 28rem),
+    linear-gradient(135deg, #06101e, #0a1e38 58%, #071426);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image: linear-gradient(rgba(89, 169, 255, .12) 1px, transparent 1px), linear-gradient(90deg, rgba(89, 169, 255, .12) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+.shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; padding: 54px 0 36px; position: relative; }
+.hero { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-bottom: 34px; }
+.eyebrow { color: #4fd6ff; letter-spacing: .16em; font-size: 12px; font-weight: 800; }
+h1 { margin: 12px 0 8px; font-size: clamp(42px, 6vw, 76px); line-height: .98; letter-spacing: -.045em; }
+.hero p { margin: 0; color: #a9bdd4; font-size: 18px; max-width: 700px; }
+.status { display: flex; align-items: center; gap: 10px; background: rgba(8, 30, 55, .78); border: 1px solid #1e4977; border-radius: 999px; padding: 12px 18px; white-space: nowrap; }
+.status span { width: 11px; height: 11px; border-radius: 50%; background: #f7b84a; box-shadow: 0 0 18px currentColor; }
+.status.ok span { background: #32d583; }
+.status.error span { background: #f97066; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.panel { background: rgba(8, 28, 50, .9); border: 1px solid #1d4671; border-radius: 22px; padding: 24px; box-shadow: 0 18px 60px rgba(0,0,0,.22); backdrop-filter: blur(12px); }
+.panel-title { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 22px; }
+.panel-title small { color: #6f8baa; font-weight: 800; letter-spacing: .13em; }
+.panel-title h2 { margin: 4px 0 0; font-size: 24px; }
+.method, .latency { border-radius: 9px; padding: 8px 11px; font-size: 12px; font-weight: 900; letter-spacing: .08em; }
+.post { background: #087443; color: #a8f5cd; }
+.latency { background: #142f50; color: #75c9ff; }
+form { display: grid; gap: 16px; }
+label { display: grid; gap: 8px; color: #b8cbe0; font-size: 13px; font-weight: 700; }
+input, textarea { width: 100%; border: 1px solid #31577f; border-radius: 12px; background: #07182b; color: #eef7ff; padding: 13px 14px; font: inherit; resize: vertical; }
+input:focus, textarea:focus { outline: 2px solid #159fe8; border-color: transparent; }
+button { border: 0; border-radius: 12px; padding: 13px 16px; background: linear-gradient(135deg, #128ee2, #16c3e8); color: white; font-weight: 850; cursor: pointer; }
+button:hover { filter: brightness(1.08); }
+.secondary { background: #143557; color: #8fd9ff; }
+pre { margin: 0; min-height: 240px; overflow: auto; border-radius: 14px; background: #030c17; border: 1px solid #162f4b; padding: 20px; color: #8fe4c4; font: 15px/1.6 "Cascadia Code", Consolas, monospace; }
+.records { margin-top: 22px; }
+.items { display: grid; gap: 11px; }
+.item { display: grid; grid-template-columns: 60px 1fr auto; align-items: center; gap: 16px; padding: 15px 16px; border-radius: 14px; background: #0a2038; border: 1px solid #1c436d; }
+.item-id { color: #54d8ff; font-family: monospace; font-weight: 800; }
+.item h3 { margin: 0 0 4px; font-size: 16px; }
+.item p, .empty { margin: 0; color: #829bb7; }
+.delete { padding: 8px 12px; background: #512630; color: #ffb0b8; }
+footer { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; color: #86a2bf; }
+footer span { background: rgba(11, 37, 64, .72); border: 1px solid #1d466e; border-radius: 999px; padding: 9px 13px; font-size: 12px; font-weight: 700; }
+
+@media (max-width: 760px) {
+  .shell { width: min(100% - 28px, 680px); padding-top: 34px; }
+  .hero { align-items: flex-start; flex-direction: column; }
+  .grid { grid-template-columns: 1fr; }
+  .item { grid-template-columns: 50px 1fr; }
+  .delete { grid-column: 1 / -1; }
+}

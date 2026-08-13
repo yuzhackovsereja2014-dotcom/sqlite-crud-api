@@ -6,7 +6,8 @@
   "description": "Dependency-free JSON CRUD API backed by SQLite",
   "scripts": {
     "start": "node src/server.mjs",
-    "test": "node --test test/*.test.mjs"
+    "test": "node --test test/*.test.mjs",
+    "benchmark": "node scripts/benchmark.mjs"
   },
   "engines": {
     "node": ">=22.5"

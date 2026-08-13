@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQLite CRUD API — демонстрация</title>
+  <link rel="stylesheet" href="/demo/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div>
+        <span class="eyebrow">РАБОЧИЙ ДЕМО-ПРОЕКТ</span>
+        <h1>SQLite CRUD API</h1>
+        <p>Node.js API с валидацией, понятными ошибками и автоматическими тестами.</p>
+      </div>
+      <div class="status"><span></span><strong id="health">Проверка API…</strong></div>
+    </header>
+
+    <section class="grid">
+      <article class="panel editor">
+        <div class="panel-title">
+          <div><small>POST</small><h2>/items</h2></div>
+          <span class="method post">CREATE</span>
+        </div>
+        <form id="create-form">
+          <label>Название<input id="title" maxlength="200" value="Подготовить отчёт" required></label>
+          <label>Описание<textarea id="description" rows="4">Собрать данные и проверить результат</textarea></label>
+          <button type="submit">Создать запись</button>
+        </form>
+      </article>
+
+      <article class="panel response">
+        <div class="panel-title">
+          <div><small>ОТВЕТ СЕРВЕРА</small><h2 id="response-code">200 OK</h2></div>
+          <span class="latency" id="latency">— ms</span>
+        </div>
+        <pre id="response-json">{
+  "status": "ready"
+}</pre>
+      </article>
+    </section>
+
+    <section class="panel records">
+      <div class="panel-title">
+        <div><small>GET</small><h2>/items</h2></div>
+        <button class="secondary" id="refresh" type="button">Обновить</button>
+      </div>
+      <div id="items" class="items"><p class="empty">Записей пока нет</p></div>
+    </section>
+
+    <footer>
+      <span>CRUD</span><span>SQLite</span><span>Проверка JSON</span><span>3+ автотеста</span><span>Без внешних зависимостей</span>
+    </footer>
+  </main>
+  <script type="module" src="/demo/app.js"></script>
+</body>
+</html>
